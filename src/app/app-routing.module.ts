@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'login', pathMatch: 'full', component: LoginComponent },
   { path: 'album-list', loadChildren: () => import('./album-list/album-list.module').then(m => m.AlbumListModule) },
+  { path: 'photo-list', loadChildren: () => import('./photo-list/photo-list.module').then(m => m.PhotoListModule) },
   { path: '**', component: NotFoundComponent },
 ];
 
