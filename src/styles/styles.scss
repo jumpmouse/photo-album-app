@@ -8,7 +8,10 @@
 
 $custom-typography: mat-typography-config(
   $font-family: 'Roboto, sans-serif',
+  $headline: mat-typography-level(64px, 78px, 300),
+  $body-1: mat-typography-level(14px, 20px, 300)
 );
+
   // $headline: mat-typography-level(32px, 48px, 700),
   // $body-1: mat-typography-level(16px, 24px, 500)
 
@@ -47,4 +50,9 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
+}
+
+.mat-form-field-appearance-standard div.mat-form-field-underline {
+  height: 2px;
+  background-color: black;
 }

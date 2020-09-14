@@ -1,0 +1,42 @@
+.login-form-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.login-form {
+  max-width: 540px;
+  width: 100%;
+}
+
+.login-full-width {
+  display: block;
+  width: 100%;
+
+  & label {
+    color: blue !important;
+  }
+}
+
+.mat-form-field-label,
+input,
+input::placeholder {
+  font-size: 32px;
+  line-height: 39px;
+  color: black;
+  font-weight: 300;
+}
+
+button.login-form-button {
+  text-transform: uppercase;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  line-height: 80px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 7.27px;
+  margin-top: 14px;
+}
