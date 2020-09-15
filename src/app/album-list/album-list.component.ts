@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { shareReplay, tap } from 'rxjs/operators';
 import { Albums, UserInfo } from '../core/core.interfaces';
 import { StoreService } from '../core/store.service';
 
