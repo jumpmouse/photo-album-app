@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-<<<<<<< HEAD
   public onSubmit(formData: FormGroup): void {
     if (formData.status === 'INVALID') {
       formData.markAllAsTouched();
@@ -33,14 +32,5 @@ export class LoginComponent implements OnInit {
         // TODO: check login status
         this.router.navigate(['']);
       });
-=======
-  public onSubmit(formData: LoginInputData): void {
-        this.loginService
-          .loginUser(formData)
-          .subscribe((loginStatus: boolean) => {
-            // TODO: check login status
-            this.router.navigate(['']);
-          });
->>>>>>> master
   }
 }
