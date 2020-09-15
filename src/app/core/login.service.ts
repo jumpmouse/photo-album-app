@@ -24,8 +24,7 @@ export class LoginService {
   private updateLoginStatus(userInputData?: LoginInputData): void {
     // TODO: implement resetUserInfo and set login status to false
     if (!userInputData) { return; }
-
-    this.loginStatus = true;
     this.storeService.setUserInfo(userInputData);
+    this.loginStatus = true;
   }
 }
