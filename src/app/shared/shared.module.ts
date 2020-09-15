@@ -8,7 +8,6 @@ import { DeleteDialogComponent } from './UI/delete-dialog/delete-dialog.componen
 import { ListSearchComponent } from './UI/list-search/list-search.component';
 import { ListSwitchViewComponent } from './UI/list-switch-view/list-switch-view.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListSearchComponent,
     ListSwitchViewComponent
   ],
-  imports: [CommonModule, ReactiveFormsModule, BrowserAnimationsModule, MatButtonModule, MatInputModule],
+  imports: [CommonModule, ReactiveFormsModule, MatButtonModule, MatInputModule],
   exports: [
     ListComponent,
     ListItemComponent,
@@ -32,7 +31,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListSwitchViewComponent,
     CommonModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule
   ]
