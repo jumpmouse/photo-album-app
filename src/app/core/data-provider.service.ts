@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Observable, of as ObservableOf } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataProviderService {
+  constructor() {}
 
-  constructor() { }
+  public getPrivateContent(): Observable<boolean> {
+    return ObservableOf(true);
+  }
 }
