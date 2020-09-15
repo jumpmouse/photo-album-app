@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Albums, Photos, UserInfo, NestedIndexList, PhotosObject } from './core.interfaces';
+import { Albums, Photos, UserInfo, PhotosObject } from './core.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,6 @@ export class StoreService {
   private userInfo$: BehaviorSubject<UserInfo> = new BehaviorSubject(null);
   private albums$: BehaviorSubject<Albums[]> = new BehaviorSubject([]);
   private photos$: BehaviorSubject<PhotosObject> = new BehaviorSubject({});
-  private photosIndexList: NestedIndexList;
 
   constructor() {}
 
