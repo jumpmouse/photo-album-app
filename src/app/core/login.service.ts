@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of as ObservableOf } from 'rxjs';
 import { LoginInputData } from './core.interfaces';
+import { DataTransformService } from './data-transform.service';
 import { StoreService } from './store.service';
 
 @Injectable({
@@ -9,7 +10,7 @@ import { StoreService } from './store.service';
 export class LoginService {
   private loginStatus = false;
 
-  constructor(private storeService: StoreService) {}
+  constructor(private storeService: StoreService, private dataTransformService: DataTransformService) {}
 
   public isUserLoggedIn(): boolean {
     return this.loginStatus;
@@ -24,7 +25,8 @@ export class LoginService {
   private updateLoginStatus(userInputData?: LoginInputData): void {
     // TODO: implement resetUserInfo and set login status to false
     if (!userInputData) { return; }
-    this.storeService.setUserInfo(userInputData);
+    const userInfo = this.dataTransformService.transformUserData(userInputData);
+    this.storeService.setUserInfo(userInfo);
     this.loginStatus = true;
   }
 }
