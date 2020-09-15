@@ -1,1 +1,6 @@
-<p>album-list works!</p>
+<h1>Foto albumi familije {{(userInfo$ | async)?.lastName}}</h1>
+<div *ngFor="let album of albumsData$ | async">
+  <div><img [src]="album.thumbnailUrl" [alt]="album.title"></div>
+  <div>{{album.title}}</div>
+  <div>{{album.userName}}</div>
+</div>
