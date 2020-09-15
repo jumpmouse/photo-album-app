@@ -9,12 +9,12 @@ export class QueryService {
   constructor() {}
 
   public getUsers(): Observable<UsersResponse[]> {
-    return ObservableOf(null);
+    return ObservableOf([]);
   }
   public getAlbums(): Observable<AlbumsResponse[]> {
-    return ObservableOf(null);
+    return ObservableOf([]);
   }
   public getPhotos(): Observable<PhotosResponse[]> {
-    return ObservableOf(null);
+    return ObservableOf([]);
   }
 }
