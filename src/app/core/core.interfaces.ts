@@ -65,7 +65,6 @@ export interface Photos {
 
 export interface PhotosObject {
   [key: string]: Photos[];
-
 }
 export interface IndexList {
   [key: string]: number;

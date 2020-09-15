@@ -5,7 +5,7 @@ import { DataTransformService } from './data-transform.service';
 import { StoreService } from './store.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LoginService {
   private loginStatus = false;
@@ -24,8 +24,10 @@ export class LoginService {
 
   private updateLoginStatus(userInputData?: LoginInputData): void {
     // TODO: implement resetUserInfo and set login status to false
-    if (!userInputData) { return; }
-    const userInfo = this.dataTransformService.transformUserData(userInputData);
+    if (!userInputData) {
+      return;
+    }
+    const userInfo = this.dataTransformService.transformLoginData(userInputData);
     this.storeService.setUserInfo(userInfo);
     this.loginStatus = true;
   }

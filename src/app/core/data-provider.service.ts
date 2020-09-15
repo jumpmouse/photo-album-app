@@ -9,10 +9,9 @@ import { UsersResponse, AlbumsResponse, PhotosResponse } from './core.interfaces
 type PrivateContent = [UsersResponse[], AlbumsResponse[], PhotosResponse[]];
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class DataProviderService {
-
   private isDataProcessed = false;
 
   constructor(
@@ -21,25 +20,20 @@ export class DataProviderService {
     private dataTransformService: DataTransformService
   ) {}
 
-  public getPrivateContent(): Observable<boolean> {
+  public fetchAndStorePrivateContent(): Observable<boolean> {
     if (this.isDataProcessed) {
       return ObservableOf(true);
     }
     return combineLatest([
       this.queryService.getUsers(),
       this.queryService.getAlbums(),
-      this.queryService.getPhotos(),
+      this.queryService.getPhotos()
     ]).pipe(
-      map(
-        (privateContent: PrivateContent) => {
-          const {
-            albums,
-            photos,
-          } = this.dataTransformService.transformPrivateData(...privateContent);
-          this.storeService.setAlbums(albums);
-          this.storeService.setPhotos(photos);
-        }
-      ),
+      map((privateContent: PrivateContent) => {
+        const { albums, photos } = this.dataTransformService.transformPrivateData(...privateContent);
+        this.storeService.setAlbums(albums);
+        this.storeService.setPhotos(photos);
+      }),
       switchMap(() => ObservableOf(true))
     );
   }

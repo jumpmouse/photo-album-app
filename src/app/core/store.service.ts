@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { Albums, Photos, UserInfo, PhotosObject } from './core.interfaces';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class StoreService {
   private userInfo$: BehaviorSubject<UserInfo> = new BehaviorSubject(null);
@@ -32,9 +32,7 @@ export class StoreService {
   }
 
   public getPhotos(albumId): Observable<Photos[]> {
-    return this.photos$
-      .asObservable()
-      .pipe(map((photosObject: PhotosObject) => photosObject[albumId]));
+    return this.photos$.asObservable().pipe(map((photosObject: PhotosObject) => photosObject[albumId]));
   }
 
   public setPhotos(photos: PhotosObject): boolean {
@@ -44,7 +42,7 @@ export class StoreService {
 
   public removePhoto(albumId: number, photoId: number): boolean {
     const newPhotosObject = this.photos$.value;
-    const itemIndex: number = newPhotosObject[albumId].findIndex(photo => photo.id === photoId);
+    const itemIndex: number = newPhotosObject[albumId].findIndex((photo) => photo.id === photoId);
     newPhotosObject[albumId].splice(itemIndex, 1);
     this.setPhotos(newPhotosObject);
     return true;

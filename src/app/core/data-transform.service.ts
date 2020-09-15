@@ -8,16 +8,16 @@ import {
   TransformedPrivateData,
   Photos,
   Albums,
-  StringList,
+  StringList
 } from './core.interfaces';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class DataTransformService {
   constructor() {}
 
-  public transformUserData(inputData: LoginInputData): UserInfo {
+  public transformLoginData(inputData: LoginInputData): UserInfo {
     const lastName = inputData.fullName.split(' ').pop();
     return { ...inputData, lastName };
   }
@@ -28,11 +28,7 @@ export class DataTransformService {
     photosResponse: PhotosResponse[]
   ): TransformedPrivateData {
     const usersNameList: StringList = this.mapUsers(usersResponse);
-    return this.mapAlbumsAndPhotos(
-      albumsResponse,
-      photosResponse,
-      usersNameList
-    );
+    return this.mapAlbumsAndPhotos(albumsResponse, photosResponse, usersNameList);
   }
 
   private mapUsers(usersResponse: UsersResponse[]): StringList {
@@ -51,7 +47,7 @@ export class DataTransformService {
   ): TransformedPrivateData {
     const transformedData = {
       albums: [],
-      photos: {},
+      photos: {}
     };
     for (const photo of [...photosResponse]) {
       const albumId = photo.albumId;

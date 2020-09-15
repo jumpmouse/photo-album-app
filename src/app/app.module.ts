@@ -9,21 +9,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    HomeComponent,
-    NotFoundComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    SharedModule
-  ],
+  declarations: [AppComponent, LoginComponent, HomeComponent, NotFoundComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

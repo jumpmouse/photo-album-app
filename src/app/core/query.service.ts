@@ -1,21 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {
-  AlbumsResponse,
-  PhotosResponse,
-  UsersResponse
-} from './core.interfaces';
+import { AlbumsResponse, PhotosResponse, UsersResponse } from './core.interfaces';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class QueryService {
   private urlObject = {
     users: 'https://jsonplaceholder.typicode.com/users',
     albums: 'https://jsonplaceholder.typicode.com/albums',
     photos: 'https://jsonplaceholder.typicode.com/photos'
-  }
+  };
 
   constructor(private http: HttpClient) {}
 

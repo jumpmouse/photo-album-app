@@ -18,26 +18,19 @@ const routes: Routes = [
     children: [
       {
         path: 'albums',
-        loadChildren: () =>
-          import('./album-list/album-list.module').then(
-            (m) => m.AlbumListModule
-          ),
+        loadChildren: () => import('./album-list/album-list.module').then((m) => m.AlbumListModule)
       },
       {
         path: 'album/:albumId/photos',
-        loadChildren: () =>
-          import('./photo-list/photo-list.module').then(
-            (m) => m.PhotoListModule
-          ),
-      },
-    ],
+        loadChildren: () => import('./photo-list/photo-list.module').then((m) => m.PhotoListModule)
+      }
+    ]
   },
-  { path: '**', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
