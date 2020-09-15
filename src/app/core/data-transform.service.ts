@@ -8,7 +8,7 @@ import {
   TransformedPrivateData,
   Photos,
   Albums,
-  StringList
+  StringList,
 } from './core.interfaces';
 
 @Injectable({
@@ -51,28 +51,24 @@ export class DataTransformService {
   ): TransformedPrivateData {
     const transformedData = {
       albums: [],
-      photos: {}
+      photos: {},
     };
-    const allPhotos = [...photosResponse];
-
-    for (const album of albumsResponse) {
-      // tslint:disable-next-line: prefer-const
-      let singleAlbum: Albums = { ...album };
-      singleAlbum.userName = usersNameList[singleAlbum.userId];
-
-      // tslint:disable-next-line: prefer-const
-      const albumPhotos: Photos[] = allPhotos.filter(
-        (photoObject: PhotosResponse, i: number) => {
-          if (photoObject.albumId !== singleAlbum.id) {
-            allPhotos.splice(i, 1);
-            return false;
-          }
-          return true;
-        }
-      );
-      transformedData.photos[singleAlbum.id] = albumPhotos;
-      singleAlbum.thumbnailUrl = albumPhotos[0].thumbnailUrl;
-      transformedData.albums.push(singleAlbum);
+    for (const photo of [...photosResponse]) {
+      const albumId = photo.albumId;
+      // if album already added, just push the photo
+      if (transformedData.photos[albumId]) {
+        transformedData.photos[albumId].push(photo);
+        continue;
+      }
+      // add album
+      const newAlbum: Albums = {
+        ...albumsResponse.find((album) => album.id === albumId)
+      };
+      newAlbum.userName = usersNameList[newAlbum.userId];
+      newAlbum.thumbnailUrl = photo.thumbnailUrl;
+      transformedData.albums.push(newAlbum);
+      // add photo
+      transformedData.photos[albumId] = [photo];
     }
     return transformedData;
   }
