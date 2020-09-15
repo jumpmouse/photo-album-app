@@ -22,12 +22,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public onSubmit(formData: LoginInputData): void {
-        this.loginService
-          .loginUser(formData)
-          .subscribe((loginStatus: boolean) => {
-            // TODO: check login status
-            this.router.navigate(['']);
-          });
+  public onSubmit(formData: FormGroup): void {
+    if (formData.status === 'INVALID') {
+      formData.markAllAsTouched();
+      return;
+    }
+    this.loginService
+      .loginUser(formData.value)
+      .subscribe((loginStatus: boolean) => {
+        // TODO: check login status
+        this.router.navigate(['']);
+      });
   }
 }
