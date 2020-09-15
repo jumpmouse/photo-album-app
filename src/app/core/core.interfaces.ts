@@ -50,16 +50,36 @@ export interface PhotosResponse {
 export interface Albums {
   id: number;
   userId: number;
-  userName: string;
+  userName?: string;
   title: string;
-  thumbnailUrl: string;
+  thumbnailUrl?: string;
 }
 
 export interface Photos {
   id: number;
-  userId: number;
   albumId: number;
   title: string;
-  thumbnailUrl: string;
   url: string;
+  thumbnailUrl: string;
+}
+
+export interface PhotosObject {
+  [key: string]: Photos[];
+
+}
+export interface IndexList {
+  [key: string]: number;
+}
+
+export interface StringList {
+  [key: string]: string;
+}
+
+export interface NestedIndexList {
+  [key: string]: IndexList;
+}
+
+export interface TransformedPrivateData {
+  albums: Albums[];
+  photos: { [key: string]: Photos[] };
 }
