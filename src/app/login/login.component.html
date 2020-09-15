@@ -1,14 +1,14 @@
 <div class="login-form-container">
-  <form class="login-form" [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm.value)">
+  <form class="login-form" [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
     <h1>Uloguješ se</h1>
     <mat-form-field class="login-full-width" floatLabel="auto" appearance="standard">
-      <input matInput formControlName="fullName" placeholder="korisničko ime">
+      <input matInput formControlName="fullName" placeholder="korisničko ime" required>
       <mat-error *ngIf="profileForm.controls.fullName.hasError('required')">
         <strong>obavezno polje</strong>
       </mat-error>
     </mat-form-field>
     <mat-form-field class="login-full-width" floatLabel="auto" appearance="standard">
-      <input matInput formControlName="email" placeholder="email">
+      <input matInput formControlName="email" placeholder="email" required>
       <mat-error
         *ngIf="profileForm.controls.email.hasError('email') && !profileForm.controls.email.hasError('required')">
         unesite validnu email adresu

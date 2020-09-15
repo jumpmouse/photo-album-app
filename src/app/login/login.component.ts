@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginInputData } from '../core/core.interfaces';
 import { LoginService } from '../core/login.service';
 
 @Component({
@@ -22,6 +21,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+<<<<<<< HEAD
+  public onSubmit(formData: FormGroup): void {
+    if (formData.status === 'INVALID') {
+      formData.markAllAsTouched();
+      return;
+    }
+    this.loginService
+      .loginUser(formData.value)
+      .subscribe((loginStatus: boolean) => {
+        // TODO: check login status
+        this.router.navigate(['']);
+      });
+=======
   public onSubmit(formData: LoginInputData): void {
         this.loginService
           .loginUser(formData)
@@ -29,5 +41,6 @@ export class LoginComponent implements OnInit {
             // TODO: check login status
             this.router.navigate(['']);
           });
+>>>>>>> master
   }
 }
