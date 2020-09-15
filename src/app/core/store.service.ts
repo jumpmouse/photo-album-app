@@ -8,8 +8,8 @@ import { Albums, Photos, UserInfo, NestedIndexList, PhotosObject } from './core.
 })
 export class StoreService {
   private userInfo$: BehaviorSubject<UserInfo> = new BehaviorSubject(null);
-  private albums$: BehaviorSubject<Albums[]> = new BehaviorSubject(null);
-  private photos$: BehaviorSubject<PhotosObject> = new BehaviorSubject(null);
+  private albums$: BehaviorSubject<Albums[]> = new BehaviorSubject([]);
+  private photos$: BehaviorSubject<PhotosObject> = new BehaviorSubject({});
   private photosIndexList: NestedIndexList;
 
   constructor() {}
