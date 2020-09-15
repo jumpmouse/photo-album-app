@@ -9,4 +9,4 @@ const routes: Routes = [{ path: '', component: AlbumListComponent }];
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AlbumListRoutingModule { }
+export class AlbumListRoutingModule {}

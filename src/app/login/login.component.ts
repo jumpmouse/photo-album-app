@@ -6,17 +6,14 @@ import { LoginService } from '../core/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) {}
 
   public profileForm = new FormGroup({
     fullName: new FormControl('', [Validators.required]),
-    email: new FormControl('', [
-      Validators.required,
-      Validators.email,
-    ]),
+    email: new FormControl('', [Validators.required, Validators.email])
   });
 
   ngOnInit(): void {}
@@ -26,11 +23,9 @@ export class LoginComponent implements OnInit {
       formData.markAllAsTouched();
       return;
     }
-    this.loginService
-      .loginUser(formData.value)
-      .subscribe((loginStatus: boolean) => {
-        // TODO: check login status
-        this.router.navigate(['']);
-      });
+    this.loginService.loginUser(formData.value).subscribe((loginStatus: boolean) => {
+      // TODO: check login status
+      this.router.navigate(['']);
+    });
   }
 }

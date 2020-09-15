@@ -10,6 +10,6 @@ export class PrivateContentResolver implements Resolve<boolean> {
   constructor(private dataProviderService: DataProviderService) {}
 
   resolve(): Observable<boolean> {
-    return this.dataProviderService.getPrivateContent();
+    return this.dataProviderService.fetchAndStorePrivateContent();
   }
 }

@@ -13,7 +13,6 @@
  * When you're ready to update dependencies, I recommend https://github.com/bahmutov/next-update
  */
 
-
 var fs = require('fs');
 var path = require('path');
 

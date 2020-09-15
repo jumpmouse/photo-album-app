@@ -9,4 +9,4 @@ const routes: Routes = [{ path: '', component: PhotoListComponent }];
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PhotoListRoutingModule { }
+export class PhotoListRoutingModule {}

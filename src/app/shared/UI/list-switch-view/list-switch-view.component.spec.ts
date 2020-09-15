@@ -8,9 +8,8 @@ describe('ListSwitchViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListSwitchViewComponent ]
-    })
-    .compileComponents();
+      declarations: [ListSwitchViewComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

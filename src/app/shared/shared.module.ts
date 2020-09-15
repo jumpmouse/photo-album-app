@@ -20,15 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ImageModalComponent,
     DeleteDialogComponent,
     ListSearchComponent,
-    ListSwitchViewComponent,
+    ListSwitchViewComponent
   ],
-  imports: [
-    CommonModule ,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, BrowserAnimationsModule, MatButtonModule, MatInputModule],
   exports: [
     ListComponent,
     ListItemComponent,
@@ -40,7 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule,
-  ],
+    MatInputModule
+  ]
 })
 export class SharedModule {}
