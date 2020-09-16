@@ -1,11 +1,11 @@
 <div class="route-container">
-<ng-container *ngIf="(userInfo$ | async)?.lastName && (albumsData$ | async)?.length; else loading">
-  <h1>Foto albumi familije {{(userInfo$ | async).lastName}}</h1>
-  <app-list [data]="(albumsData$ | async)" [layout]="layout" [template]="listItemTemplate"></app-list>
-</ng-container>
+  <ng-container *ngIf="(userInfo$ | async)?.lastName && (albumsData$ | async)?.length; else loading">
+    <h1>Foto albumi familije {{(userInfo$ | async).lastName}}</h1>
+    <app-list-switch-view (toggleLayout)="toggleLayout($event)"></app-list-switch-view>
+    <app-list [data]="(albumsData$ | async)" [layout]="layout" [template]="listItemTemplate"></app-list>
+  </ng-container>
 </div>
 
 <ng-template #loading>
   <app-spinner></app-spinner>
 </ng-template>
-

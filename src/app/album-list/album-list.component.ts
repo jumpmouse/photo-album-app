@@ -20,7 +20,11 @@ export class AlbumListComponent implements OnInit {
     this.setData();
   }
 
-  setData(): void {
+  public toggleLayout(layout: GridLayout): void {
+    this.layout = layout;
+  }
+
+  private setData(): void {
     this.userInfo$ = this.storeService.userInfo;
     this.albumsData$ = this.storeService.albums;
   }
