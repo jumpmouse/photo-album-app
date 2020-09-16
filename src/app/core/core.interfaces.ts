@@ -82,3 +82,7 @@ export interface TransformedPrivateData {
   albums: Albums[];
   photos: { [key: string]: Photos[] };
 }
+
+export type GridLayout = 'grid' | 'list';
+
+export type ItemTemplateType = 'photos' | 'albums';

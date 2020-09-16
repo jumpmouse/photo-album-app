@@ -1,1 +1,10 @@
-<p>list-switch-view works!</p>
+<div class="switcher">
+  <span class="switcher-container">
+    <button mat-icon-button (click)="emitLayoutChange('grid')" color="accent" [class.layout-active]="layout==='grid'">
+      <mat-icon>dashboard</mat-icon>
+    </button>
+    <button mat-icon-button (click)="emitLayoutChange('list')" color="accent" [class.layout-active]="layout==='list'">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </span>
+</div>
