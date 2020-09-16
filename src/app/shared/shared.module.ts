@@ -14,6 +14,8 @@ import { DeleteDialogComponent } from './UI/delete-dialog/delete-dialog.componen
 import { ListSearchComponent } from './UI/list-search/list-search.component';
 import { ListSwitchViewComponent } from './UI/list-switch-view/list-switch-view.component';
 import { SpinnerComponent } from './UI/spinner/spinner.component';
+import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,12 @@ import { SpinnerComponent } from './UI/spinner/spinner.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    RouterModule
   ],
   exports: [
     ListItemComponent,
@@ -42,6 +46,7 @@ import { SpinnerComponent } from './UI/spinner/spinner.component';
     ListSwitchViewComponent,
     SpinnerComponent,
     CommonModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatInputModule,
