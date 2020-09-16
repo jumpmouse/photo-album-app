@@ -34,3 +34,18 @@
   font-size: 18px;
   line-height: 22px;
 }
+
+@media screen and (min-width: 601px) {
+  .list-item-layout {
+    .item-img-container {
+      width: 350px;
+      height: 200px;
+      float: left;
+      margin-right: 26px;
+    }
+
+    .item-title {
+      margin-top: 13px;
+    }
+  }
+}

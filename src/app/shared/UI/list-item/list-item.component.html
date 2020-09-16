@@ -1,4 +1,4 @@
-<div [class]="['list-item-container', layout + '-item-layout', template + '-template']">
+<div [class]="['list-item-container', layout + '-item-layout', template + '-template', 'clearfix']">
   <div class="item-img-container"><img [src]="item.thumbnailUrl" [alt]="item.title"></div>
   <a class="item-title text-ellipsis" [routerLink]="['/album', item.id, 'photos']">{{item.title}}</a>
   <ng-container *ngIf="template === 'albums'">
