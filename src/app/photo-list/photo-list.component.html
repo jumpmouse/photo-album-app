@@ -1,1 +1,12 @@
-<p>photo-list works!</p>
+<div class="route-container">
+  <ng-container *ngIf="(photosData$ | async)?.length; else loading">
+    <h1>{{albumTitle}}</h1>
+    <app-list-switch-view (toggleLayout)="toggleLayout($event)"></app-list-switch-view>
+    <app-list [data]="(photosData$ | async)" [layout]="layout" [template]="listItemTemplate"
+      (deleteEvent)="deletePhoto($event)"></app-list>
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>

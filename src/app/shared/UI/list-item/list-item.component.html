@@ -1,11 +1,12 @@
 <div [class]="['list-item-container', layout + '-item-layout', template + '-template', 'clearfix']">
   <div class="item-img-container"><img [src]="item.thumbnailUrl" [alt]="item.title"></div>
-  <a class="item-title text-ellipsis" [routerLink]="['/album', item.id, 'photos']">{{item.title}}</a>
   <ng-container *ngIf="template === 'albums'">
+    <a class="item-title text-ellipsis" [routerLink]="['/album', item.id, 'photos']">{{item.title}}</a>
     <div class="item-created-by text-ellipsis">kreirao: {{item.userName}}</div>
   </ng-container>
   <ng-container *ngIf="template === 'photos'">
-    <button color="accent" mat-icon-button class="delete-item-button">
+    <a class="item-title text-ellipsis">{{item.title}}</a>
+    <button color="accent" mat-icon-button class="delete-item-button" (click)="emitDelete(item)">
       <mat-icon color="accent">delete</mat-icon>
     </button>
   </ng-container>
