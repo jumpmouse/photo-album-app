@@ -35,7 +35,13 @@
   line-height: 22px;
 }
 
-@media screen and (min-width: 601px) {
+.delete-item-button {
+  &:hover .mat-icon {
+    color: black;
+  }
+}
+
+@media screen and (min-width: 600px) {
   .list-item-layout {
     .item-img-container {
       width: 350px;
@@ -46,6 +52,10 @@
 
     .item-title {
       margin-top: 13px;
+    }
+
+    .delete-item-button {
+      margin-top: 105px;
     }
   }
 }

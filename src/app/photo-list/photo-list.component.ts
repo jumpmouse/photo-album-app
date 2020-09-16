@@ -29,6 +29,10 @@ export class PhotoListComponent implements OnInit {
     this.layout = layout;
   }
 
+  public deletePhoto([albumId, photoId]: [number, number]): void {
+    this.storeService.removePhoto(albumId, photoId);
+  }
+
   private setData(selectedAlbum: Albums): void {
     this.albumTitle = selectedAlbum.title;
     this.photosData$ = this.storeService.getPhotos(selectedAlbum.id);
