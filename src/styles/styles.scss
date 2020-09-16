@@ -5,11 +5,9 @@
 
 @import 'themes.scss';
 
-$custom-typography: mat-typography-config(
-  $font-family: 'Roboto, sans-serif',
+$custom-typography: mat-typography-config($font-family: 'Roboto, sans-serif',
   $headline: mat-typography-level(64px, 78px, 300),
-  $body-1: mat-typography-level(14px, 20px, 300)
-);
+  $body-1: mat-typography-level(14px, 20px, 300));
 
 // $headline: mat-typography-level(32px, 48px, 700),
 // $body-1: mat-typography-level(16px, 24px, 500)
@@ -30,15 +28,9 @@ $photo-album-app-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$photo-album-app-theme: mat-light-theme(
-  (
-    color: (
-      primary: $photo-album-app-primary,
+$photo-album-app-theme: mat-light-theme((color: (primary: $photo-album-app-primary,
       accent: $photo-album-app-accent,
-      warn: $photo-album-app-warn
-    )
-  )
-);
+      warn: $photo-album-app-warn)));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -51,6 +43,7 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
@@ -59,4 +52,11 @@ body {
 .mat-form-field-appearance-standard div.mat-form-field-underline {
   height: 2px;
   background-color: black;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }

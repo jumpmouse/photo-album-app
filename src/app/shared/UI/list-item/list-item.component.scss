@@ -1,0 +1,36 @@
+.list-item-container {
+  width: 100%;
+}
+
+.grid-item-layout {}
+
+.item-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  text-align: center;
+  background: #f9f9f9;
+
+  &>img {
+    object-fit: none;
+    object-position: 50% 50%;
+    height: 100%;
+  }
+}
+
+.item-title {
+  font-size: 32px;
+  line-height: 39px;
+  color: black;
+  font-weight: 300;
+  text-decoration: none;
+
+  &:hover {
+    color: #FFC23B;
+  }
+}
+
+.item-created-by {
+  font-size: 18px;
+  line-height: 22px;
+}
