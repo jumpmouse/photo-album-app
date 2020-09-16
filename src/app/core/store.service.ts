@@ -31,6 +31,10 @@ export class StoreService {
     return true;
   }
 
+  public getAlbum(albumId: number): Albums {
+    return this.albums$.value.find((album) => album.id === albumId);
+  }
+
   public getPhotos(albumId): Observable<Photos[]> {
     return this.photos$.asObservable().pipe(map((photosObject: PhotosObject) => photosObject[albumId]));
   }
