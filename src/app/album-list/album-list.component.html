@@ -1,6 +1,11 @@
-<h1>Foto albumi familije {{(userInfo$ | async)?.lastName}}</h1>
-<div *ngFor="let album of albumsData$ | async">
-  <div><img [src]="album.thumbnailUrl" [alt]="album.title"></div>
-  <div>{{album.title}}</div>
-  <div>{{album.userName}}</div>
+<div class="route-container">
+<ng-container *ngIf="(userInfo$ | async)?.lastName && (albumsData$ | async)?.length; else loading">
+  <h1>Foto albumi familije {{(userInfo$ | async).lastName}}</h1>
+  <app-list [data]="(albumsData$ | async)" [layout]="layout" [template]="listItemTemplate"></app-list>
+</ng-container>
 </div>
+
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>
+
