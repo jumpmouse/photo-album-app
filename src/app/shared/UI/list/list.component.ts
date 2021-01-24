@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GridLayout, ItemTemplateType } from 'src/app/core/core.interfaces';
 
 @Component({
@@ -10,8 +10,6 @@ export class ListComponent {
   @Input() data: any[];
   @Input() layout: GridLayout;
   @Input() template: ItemTemplateType;
-  @Output() deleteEvent = new EventEmitter<[number, number]>();
-
   public layoutOptions = {
     grid: {
       fxLayout: 'row wrap',
@@ -28,8 +26,4 @@ export class ListComponent {
       'fxFlex.sm': '100%'
     }
   };
-
-  public deleteItem(params: [number, number]): void {
-    this.deleteEvent.emit(params);
-  }
 }

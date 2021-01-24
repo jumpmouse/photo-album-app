@@ -3,8 +3,7 @@
   <ng-container *ngFor="let item of data">
     <div class="list-item-container" [fxFlex]="layoutOptions[layout].fxFlex"
       [fxFlex.xs]="layoutOptions[layout]['fxFlex.xs']" [fxFlex.sm]="layoutOptions[layout]['fxFlex.sm']">
-      <app-list-item [item]="item" [layout]="layout" [template]="template" (deleteEvent)="deleteItem($event)">
-      </app-list-item>
+      <app-list-item [item]="item" [layout]="layout" [template]="template"></app-list-item>
     </div>
   </ng-container>
 </div>
